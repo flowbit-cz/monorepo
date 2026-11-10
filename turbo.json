@@ -10,7 +10,7 @@
     },
     "build": {
       "dependsOn": ["^generate", "generate"],
-      "env": ["NEXT_PUBLIC_*", "API_BASE_URL", "API_MOCKING"],
+      "env": ["NEXT_PUBLIC_*", "API_BASE_URL", "API_MOCKING", "SKIP_ENV_VALIDATION", "APP_VERSION"],
       "outputs": [".next/**", "!.next/cache/**", "storybook-static/**"]
     },
     "dev": {
