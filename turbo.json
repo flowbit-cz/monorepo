@@ -1,0 +1,50 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "ui": "tui",
+  "globalDependencies": [".env"],
+  "tasks": {
+    "generate": {
+      "cache": false,
+      "env": ["OPENAPI_*_URL"],
+      "outputs": ["src/generated/**"]
+    },
+    "build": {
+      "dependsOn": ["^generate", "generate"],
+      "env": ["NEXT_PUBLIC_*", "API_BASE_URL", "API_MOCKING"],
+      "outputs": [".next/**", "!.next/cache/**", "storybook-static/**"]
+    },
+    "dev": {
+      "dependsOn": ["^generate", "generate"],
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": ["^generate", "generate"]
+    },
+    "typecheck": {
+      "dependsOn": ["^generate", "generate"]
+    },
+    "test": {
+      "dependsOn": ["^generate", "generate"],
+      "outputs": []
+    },
+    "test:coverage": {
+      "dependsOn": ["^generate", "generate"],
+      "outputs": ["coverage/**"]
+    },
+    "test:e2e": {
+      "dependsOn": ["^generate", "generate"],
+      "cache": false,
+      "env": ["CI", "E2E_*"],
+      "outputs": ["playwright-report/**", "test-results/**"]
+    },
+    "test:mutation": {
+      "dependsOn": ["^generate", "generate"],
+      "outputs": ["reports/mutation/**"]
+    },
+    "storybook": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

@@ -1,0 +1,150 @@
+openapi: 3.0.3
+info:
+  title: Offers API (demo)
+  version: 0.1.0
+  description: >
+    Demo spec for the template, used when OPENAPI_OFFERS_URL is not set.
+    Replace it with the real backend by setting OPENAPI_OFFERS_URL.
+tags:
+  - name: offers
+  - name: destinations
+paths:
+  /offers:
+    get:
+      tags: [offers]
+      operationId: listOffers
+      summary: Search package holiday offers
+      parameters:
+        - { name: destination, in: query, schema: { type: string }, description: Destination code }
+        - { name: dateFrom, in: query, schema: { type: string, format: date } }
+        - { name: dateTo, in: query, schema: { type: string, format: date } }
+        - { name: adults, in: query, schema: { type: integer, minimum: 1, maximum: 9, default: 2 } }
+        - { name: board, in: query, schema: { $ref: "#/components/schemas/BoardType" } }
+        - {
+            name: sort,
+            in: query,
+            schema: { type: string, enum: [recommended, priceAsc, priceDesc], default: recommended },
+          }
+        - { name: page, in: query, schema: { type: integer, minimum: 1, default: 1 } }
+        - { name: pageSize, in: query, schema: { type: integer, minimum: 1, maximum: 50, default: 12 } }
+      responses:
+        "200":
+          description: One page of offers
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/OfferPage" }
+        "400":
+          description: Invalid query
+          content:
+            application/problem+json:
+              schema: { $ref: "#/components/schemas/Problem" }
+  /offers/{slug}:
+    get:
+      tags: [offers]
+      operationId: getOffer
+      summary: Offer detail
+      parameters:
+        - { name: slug, in: path, required: true, schema: { type: string } }
+      responses:
+        "200":
+          description: Offer detail
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/OfferDetail" }
+        "404":
+          description: Offer not found
+          content:
+            application/problem+json:
+              schema: { $ref: "#/components/schemas/Problem" }
+  /destinations:
+    get:
+      tags: [destinations]
+      operationId: listDestinations
+      summary: Destinations available for search
+      responses:
+        "200":
+          description: Destinations
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Destination" }
+components:
+  schemas:
+    BoardType:
+      type: string
+      enum: [RO, BB, HB, FB, AI]
+    Money:
+      type: object
+      required: [amount, currency]
+      properties:
+        amount: { type: number, example: 1299 }
+        currency: { type: string, example: EUR }
+    Destination:
+      type: object
+      required: [code, name, country]
+      properties:
+        code: { type: string, example: PMI }
+        name: { type: string, example: Mallorca }
+        country: { type: string, example: Spain }
+    Image:
+      type: object
+      required: [url, alt]
+      properties:
+        url: { type: string, format: uri, example: "https://picsum.photos/seed/dertour/800/600" }
+        alt: { type: string, example: Hotel pool with sea view }
+    Hotel:
+      type: object
+      required: [name, stars]
+      properties:
+        name: { type: string, example: Hotel Playa Azul }
+        stars: { type: integer, minimum: 1, maximum: 5, example: 4 }
+    OfferSummary:
+      type: object
+      required: [id, slug, title, destination, hotel, image, price, nights, board, departureDate, returnDate]
+      properties:
+        id: { type: string, example: "off-1001" }
+        slug: { type: string, example: hotel-playa-azul-mallorca }
+        title: { type: string, example: Hotel Playa Azul }
+        destination: { $ref: "#/components/schemas/Destination" }
+        hotel: { $ref: "#/components/schemas/Hotel" }
+        image: { $ref: "#/components/schemas/Image" }
+        price: { $ref: "#/components/schemas/Money" }
+        nights: { type: integer, minimum: 1, example: 7 }
+        board: { $ref: "#/components/schemas/BoardType" }
+        departureDate: { type: string, format: date, example: "2027-07-01" }
+        returnDate: { type: string, format: date, example: "2027-07-08" }
+    OfferDetail:
+      allOf:
+        - $ref: "#/components/schemas/OfferSummary"
+        - type: object
+          required: [description, highlights, gallery]
+          properties:
+            description: { type: string, example: Family-friendly beach hotel directly on the bay of Alcúdia. }
+            highlights:
+              type: array
+              items: { type: string }
+              example: [Directly on the beach, Kids club, Free Wi-Fi]
+            gallery:
+              type: array
+              items: { $ref: "#/components/schemas/Image" }
+    OfferPage:
+      type: object
+      required: [items, page, pageSize, total]
+      properties:
+        items:
+          type: array
+          items: { $ref: "#/components/schemas/OfferSummary" }
+        page: { type: integer, example: 1 }
+        pageSize: { type: integer, example: 12 }
+        total: { type: integer, example: 3 }
+    Problem:
+      description: RFC 9457 problem details
+      type: object
+      required: [title, status]
+      properties:
+        type: { type: string }
+        title: { type: string }
+        status: { type: integer }
+        detail: { type: string }
+        code: { type: string }

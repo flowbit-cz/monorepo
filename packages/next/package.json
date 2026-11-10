@@ -1,0 +1,57 @@
+{
+  "name": "@dertour/next",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Next.js building blocks: next.config preset, security headers, i18n proxy, SEO metadata, JSON-LD, health route, error pages",
+  "type": "module",
+  "exports": {
+    "./config": "./src/config/withDertour.ts",
+    "./security-headers": "./src/config/securityHeaders.ts",
+    "./metadata": "./src/metadata/createMetadata.ts",
+    "./json-ld": "./src/metadata/JsonLd.tsx",
+    "./proxy": "./src/proxy/createI18nProxy.ts",
+    "./health": "./src/routes/health.ts",
+    "./components": "./src/components/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@dertour/i18n": "workspace:*"
+  },
+  "peerDependencies": {
+    "next": "^16",
+    "next-intl": "^4",
+    "react": "^19"
+  },
+  "devDependencies": {
+    "@dertour/eslint-config": "workspace:*",
+    "@dertour/testing": "workspace:*",
+    "@dertour/tsconfig": "workspace:*",
+    "@dertour/vitest-config": "workspace:*",
+    "@tanstack/react-query": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "eslint": "catalog:",
+    "jsdom": "catalog:",
+    "msw": "catalog:",
+    "next": "catalog:",
+    "next-intl": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs}": [
+      "eslint --fix --no-warn-ignored",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": "prettier --write"
+  }
+}

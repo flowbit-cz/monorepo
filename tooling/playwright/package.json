@@ -1,0 +1,23 @@
+{
+  "name": "@dertour/playwright-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared Playwright preset and fixtures (a11y check)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.d.mts",
+      "default": "./index.mjs"
+    },
+    "./fixtures": "./fixtures.ts"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "catalog:"
+  },
+  "peerDependencies": {
+    "@playwright/test": "*"
+  },
+  "devDependencies": {
+    "@playwright/test": "catalog:"
+  }
+}

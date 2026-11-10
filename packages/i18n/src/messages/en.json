@@ -1,0 +1,41 @@
+{
+  "common": {
+    "actions": {
+      "search": "Search",
+      "reset": "Reset",
+      "showMore": "Show more",
+      "back": "Back",
+      "retry": "Try again",
+      "close": "Close"
+    },
+    "pagination": {
+      "label": "Pagination",
+      "previous": "Previous page",
+      "next": "Next page",
+      "page": "Page {page}"
+    },
+    "price": {
+      "from": "from {price}",
+      "perPerson": "per person"
+    },
+    "duration": {
+      "nights": "{nights, plural, one {# night} other {# nights}}"
+    },
+    "board": {
+      "RO": "Room only",
+      "BB": "Bed & breakfast",
+      "HB": "Half board",
+      "FB": "Full board",
+      "AI": "All inclusive"
+    },
+    "loading": "Loading…",
+    "stars": "{count, plural, one {# star} other {# stars}}"
+  },
+  "errors": {
+    "required": "Required",
+    "invalidDate": "Invalid date",
+    "dateOrder": "The return date must be after the departure date",
+    "generic": "Something went wrong.",
+    "notFound": "Page not found"
+  }
+}

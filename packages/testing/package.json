@@ -1,0 +1,55 @@
+{
+  "name": "@dertour/testing",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Test helpers for apps and packages: render with providers, MSW server, a11y assertion",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./msw": "./src/msw.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "axe-core": "catalog:",
+    "@testing-library/jest-dom": "catalog:"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": "^5",
+    "@testing-library/react": "^16",
+    "@testing-library/user-event": "^14",
+    "msw": "^2",
+    "next-intl": "^4",
+    "react": "^19",
+    "vitest": "^4"
+  },
+  "devDependencies": {
+    "@dertour/eslint-config": "workspace:*",
+    "@dertour/tsconfig": "workspace:*",
+    "@dertour/vitest-config": "workspace:*",
+    "@tanstack/react-query": "catalog:",
+    "@testing-library/dom": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@testing-library/user-event": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "eslint": "catalog:",
+    "jsdom": "catalog:",
+    "msw": "catalog:",
+    "next-intl": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs}": [
+      "eslint --fix --no-warn-ignored",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": "prettier --write"
+  }
+}

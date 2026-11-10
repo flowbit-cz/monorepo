@@ -1,0 +1,9 @@
+{
+  "name": "@dertour/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared tsconfig presets",
+  "files": [
+    "*.json"
+  ]
+}

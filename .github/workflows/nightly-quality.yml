@@ -1,0 +1,52 @@
+# Nightly test quality: full E2E (all browsers), mutation testing, and Claude raising the mutation score.
+name: Nightly quality
+
+on:
+  schedule:
+    - cron: "0 2 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  mutation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with: { node-version-file: .nvmrc, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm turbo run test:mutation --continue
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mutation-reports
+          path: "**/reports/mutation/**"
+      - run: node tooling/ai/install.mjs
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Use the dertour-test-audit skill. Mutation reports are in **/reports/mutation/mutation.json.
+            Add tests that kill the surviving mutants with the biggest impact (max ~10 per run), run `pnpm verify`,
+            and open a PR "test: raise mutation score" with a before/after table. Don't change product code.
+          claude_args: --max-turns 60
+
+  e2e-all-browsers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with: { node-version-file: .nvmrc, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @dertour/template exec playwright install --with-deps
+      - run: for app in apps/*/; do [ -f "${app}.env.example" ] && cp "${app}.env.example" "${app}.env"; done
+      - run: pnpm turbo run test:e2e
+        env: { CI: "1" }

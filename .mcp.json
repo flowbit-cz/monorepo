@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "playwright-test": {
+      "command": "pnpm",
+      "args": ["--dir", "apps/template", "exec", "playwright", "run-test-mcp-server"]
+    }
+  }
+}

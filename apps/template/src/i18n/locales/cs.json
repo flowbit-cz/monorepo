@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "titleTemplate": "%s | DERTOUR",
+    "defaultTitle": "DERTOUR – Zájezdy a dovolená",
+    "description": "Rezervujte zájezdy, hotely a okružní cesty s DERTOUR."
+  },
+  "layout": {
+    "skipToContent": "Přejít na obsah",
+    "homeLink": "DERTOUR úvodní stránka",
+    "mainNavigation": "Hlavní navigace",
+    "nav": {
+      "home": "Úvod",
+      "offers": "Nabídky"
+    },
+    "language": "Jazyk",
+    "footer": {
+      "privacy": "Ochrana osobních údajů",
+      "imprint": "Tiráž",
+      "copyright": "© {year} DERTOUR"
+    }
+  },
+  "status": {
+    "notFoundTitle": "Stránka nenalezena",
+    "notFoundText": "Stránka neexistuje nebo byla přesunuta.",
+    "errorTitle": "Něco se pokazilo",
+    "errorText": "Zkuste to prosím za chvíli znovu.",
+    "backHome": "Zpět na úvod"
+  }
+}

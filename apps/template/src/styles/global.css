@@ -1,0 +1,11 @@
+/*
+ * Tailwind v4 is configured here. Design tokens come from @dertour/tokens (one source for all apps),
+ * and base styles from @dertour/ui. App-specific theme additions go into the @theme block below.
+ */
+@import "tailwindcss";
+@import "@dertour/tokens/theme.css";
+@import "@dertour/ui/styles.css";
+
+@theme {
+    /* App-specific tokens (keep empty unless the app really differs from the design system). */
+}

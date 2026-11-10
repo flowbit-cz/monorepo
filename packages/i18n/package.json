@@ -1,0 +1,40 @@
+{
+  "name": "@dertour/i18n",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Locale catalogue of DERTOUR markets, Intl formatters (price, dates, nights) and shared UI messages",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./messages/*.json": "./src/messages/*.json"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:mutation": "stryker run"
+  },
+  "dependencies": {
+    "@dertour/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@dertour/eslint-config": "workspace:*",
+    "@dertour/tsconfig": "workspace:*",
+    "@dertour/vitest-config": "workspace:*",
+    "@stryker-mutator/core": "catalog:",
+    "@stryker-mutator/vitest-runner": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "eslint": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs}": [
+      "eslint --fix --no-warn-ignored",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": "prettier --write"
+  }
+}

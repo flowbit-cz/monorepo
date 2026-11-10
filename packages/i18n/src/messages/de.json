@@ -1,0 +1,41 @@
+{
+  "common": {
+    "actions": {
+      "search": "Suchen",
+      "reset": "Zurücksetzen",
+      "showMore": "Mehr anzeigen",
+      "back": "Zurück",
+      "retry": "Erneut versuchen",
+      "close": "Schließen"
+    },
+    "pagination": {
+      "label": "Seitennavigation",
+      "previous": "Vorherige Seite",
+      "next": "Nächste Seite",
+      "page": "Seite {page}"
+    },
+    "price": {
+      "from": "ab {price}",
+      "perPerson": "p. P."
+    },
+    "duration": {
+      "nights": "{nights, plural, one {# Nacht} other {# Nächte}}"
+    },
+    "board": {
+      "RO": "Ohne Verpflegung",
+      "BB": "Frühstück",
+      "HB": "Halbpension",
+      "FB": "Vollpension",
+      "AI": "All inclusive"
+    },
+    "loading": "Wird geladen …",
+    "stars": "{count, plural, one {# Stern} other {# Sterne}}"
+  },
+  "errors": {
+    "required": "Pflichtfeld",
+    "invalidDate": "Ungültiges Datum",
+    "dateOrder": "Das Rückreisedatum muss nach dem Hinreisedatum liegen",
+    "generic": "Etwas ist schiefgelaufen.",
+    "notFound": "Seite nicht gefunden"
+  }
+}

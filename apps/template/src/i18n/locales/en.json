@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "titleTemplate": "%s | DERTOUR",
+    "defaultTitle": "DERTOUR – Package holidays & travel",
+    "description": "Book package holidays, hotels and tours with DERTOUR."
+  },
+  "layout": {
+    "skipToContent": "Skip to content",
+    "homeLink": "DERTOUR home",
+    "mainNavigation": "Main navigation",
+    "nav": {
+      "home": "Home",
+      "offers": "Offers"
+    },
+    "language": "Language",
+    "footer": {
+      "privacy": "Privacy",
+      "imprint": "Imprint",
+      "copyright": "© {year} DERTOUR"
+    }
+  },
+  "status": {
+    "notFoundTitle": "Page not found",
+    "notFoundText": "The page doesn't exist or has moved.",
+    "errorTitle": "Something went wrong",
+    "errorText": "Please try again in a moment.",
+    "backHome": "Back to home"
+  }
+}

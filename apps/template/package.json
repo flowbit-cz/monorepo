@@ -1,0 +1,72 @@
+{
+  "name": "@dertour/template",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Template Next.js app of the DERTOUR monorepo. Copy it to start a new app.",
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:mutation": "stryker run",
+    "msw:init": "msw init public --save=false"
+  },
+  "dependencies": {
+    "@contentstack/delivery-sdk": "catalog:",
+    "@datadog/browser-rum": "catalog:",
+    "@dertour/api": "workspace:*",
+    "@dertour/core": "workspace:*",
+    "@dertour/i18n": "workspace:*",
+    "@dertour/integrations": "workspace:*",
+    "@dertour/next": "workspace:*",
+    "@dertour/react": "workspace:*",
+    "@dertour/server": "workspace:*",
+    "@dertour/tokens": "workspace:*",
+    "@dertour/ui": "workspace:*",
+    "@hookform/resolvers": "catalog:",
+    "@next/third-parties": "catalog:",
+    "@tanstack/react-query": "catalog:",
+    "msw": "catalog:",
+    "next": "catalog:",
+    "next-intl": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-hook-form": "catalog:",
+    "zod": "catalog:",
+    "zustand": "catalog:"
+  },
+  "devDependencies": {
+    "@dertour/eslint-config": "workspace:*",
+    "@dertour/playwright-config": "workspace:*",
+    "@dertour/testing": "workspace:*",
+    "@dertour/tsconfig": "workspace:*",
+    "@dertour/vitest-config": "workspace:*",
+    "@playwright/test": "catalog:",
+    "@stryker-mutator/core": "catalog:",
+    "@stryker-mutator/vitest-runner": "catalog:",
+    "@tailwindcss/postcss": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@testing-library/user-event": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "eslint": "catalog:",
+    "jsdom": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs}": [
+      "eslint --fix --no-warn-ignored",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": "prettier --write"
+  }
+}

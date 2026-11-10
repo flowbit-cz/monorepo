@@ -1,0 +1,68 @@
+{
+  "name": "@dertour/integrations",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Optional third-party integrations used on DERTOUR sites: Datadog RUM, Usercentrics consent, Google Tag Manager, Contentstack CMS",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    "./datadog": "./src/datadog/index.ts",
+    "./usercentrics": "./src/usercentrics/index.ts",
+    "./gtm": "./src/gtm/index.ts",
+    "./contentstack": "./src/contentstack/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "peerDependencies": {
+    "@contentstack/delivery-sdk": "^5",
+    "@datadog/browser-rum": "^7",
+    "@next/third-parties": "^16",
+    "next": "^16",
+    "react": "^19"
+  },
+  "peerDependenciesMeta": {
+    "@contentstack/delivery-sdk": {
+      "optional": true
+    },
+    "@datadog/browser-rum": {
+      "optional": true
+    },
+    "@next/third-parties": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@contentstack/delivery-sdk": "catalog:",
+    "@datadog/browser-rum": "catalog:",
+    "@dertour/eslint-config": "workspace:*",
+    "@dertour/testing": "workspace:*",
+    "@dertour/tsconfig": "workspace:*",
+    "@dertour/vitest-config": "workspace:*",
+    "@next/third-parties": "catalog:",
+    "@tanstack/react-query": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "eslint": "catalog:",
+    "jsdom": "catalog:",
+    "msw": "catalog:",
+    "next": "catalog:",
+    "next-intl": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs}": [
+      "eslint --fix --no-warn-ignored",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": "prettier --write"
+  }
+}

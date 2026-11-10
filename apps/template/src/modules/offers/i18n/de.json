@@ -1,0 +1,44 @@
+{
+  "list": {
+    "title": "Pauschalreisen",
+    "metaTitle": "Pauschalreisen günstig buchen",
+    "metaDescription": "Finden Sie Ihre Pauschalreise: Hotels, Flüge und Transfers zum besten Preis.",
+    "results": "{count, plural, =0 {Keine Angebote} one {# Angebot} other {# Angebote}}",
+    "empty": "Für Ihre Suche haben wir leider keine Angebote gefunden.",
+    "emptyHint": "Ändern Sie die Filter oder setzen Sie sie zurück."
+  },
+  "filter": {
+    "label": "Angebote filtern",
+    "destination": "Reiseziel",
+    "anyDestination": "Alle Reiseziele",
+    "dateFrom": "Hinreise ab",
+    "dateTo": "Rückreise bis",
+    "adults": "Erwachsene",
+    "board": "Verpflegung",
+    "anyBoard": "Beliebig",
+    "sort": "Sortierung",
+    "sortOptions": {
+      "recommended": "Empfohlen",
+      "priceAsc": "Preis aufsteigend",
+      "priceDesc": "Preis absteigend"
+    },
+    "loadingDestinations": "Reiseziele werden geladen …"
+  },
+  "favorite": {
+    "add": "{title} merken",
+    "remove": "{title} nicht mehr merken"
+  },
+  "detail": {
+    "highlights": "Highlights",
+    "gallery": "Bilder",
+    "travelPeriod": "Reisezeitraum",
+    "board": "Verpflegung",
+    "price": "Preis",
+    "book": "Jetzt anfragen",
+    "backToList": "Zurück zu allen Angeboten"
+  },
+  "notFound": {
+    "title": "Angebot nicht gefunden",
+    "text": "Dieses Angebot ist leider nicht mehr verfügbar."
+  }
+}

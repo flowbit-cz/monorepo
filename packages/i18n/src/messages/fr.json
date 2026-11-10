@@ -1,0 +1,41 @@
+{
+  "common": {
+    "actions": {
+      "search": "Rechercher",
+      "reset": "Réinitialiser",
+      "showMore": "Afficher plus",
+      "back": "Retour",
+      "retry": "Réessayer",
+      "close": "Fermer"
+    },
+    "pagination": {
+      "label": "Pagination",
+      "previous": "Page précédente",
+      "next": "Page suivante",
+      "page": "Page {page}"
+    },
+    "price": {
+      "from": "dès {price}",
+      "perPerson": "par personne"
+    },
+    "duration": {
+      "nights": "{nights, plural, one {# nuit} other {# nuits}}"
+    },
+    "board": {
+      "RO": "Logement seul",
+      "BB": "Petit-déjeuner",
+      "HB": "Demi-pension",
+      "FB": "Pension complète",
+      "AI": "Tout compris"
+    },
+    "loading": "Chargement…",
+    "stars": "{count, plural, one {# étoile} other {# étoiles}}"
+  },
+  "errors": {
+    "required": "Champ obligatoire",
+    "invalidDate": "Date invalide",
+    "dateOrder": "La date de retour doit être postérieure à la date de départ",
+    "generic": "Une erreur est survenue.",
+    "notFound": "Page introuvable"
+  }
+}

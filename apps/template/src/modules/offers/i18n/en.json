@@ -1,0 +1,44 @@
+{
+  "list": {
+    "title": "Package holidays",
+    "metaTitle": "Book cheap package holidays",
+    "metaDescription": "Find your package holiday: hotels, flights and transfers at the best price.",
+    "results": "{count, plural, =0 {No offers} one {# offer} other {# offers}}",
+    "empty": "We couldn't find any offers for your search.",
+    "emptyHint": "Change the filters or reset them."
+  },
+  "filter": {
+    "label": "Filter offers",
+    "destination": "Destination",
+    "anyDestination": "All destinations",
+    "dateFrom": "Departure from",
+    "dateTo": "Return by",
+    "adults": "Adults",
+    "board": "Board",
+    "anyBoard": "Any",
+    "sort": "Sort by",
+    "sortOptions": {
+      "recommended": "Recommended",
+      "priceAsc": "Price: low to high",
+      "priceDesc": "Price: high to low"
+    },
+    "loadingDestinations": "Loading destinations…"
+  },
+  "favorite": {
+    "add": "Save {title}",
+    "remove": "Remove {title} from saved"
+  },
+  "detail": {
+    "highlights": "Highlights",
+    "gallery": "Pictures",
+    "travelPeriod": "Travel period",
+    "board": "Board",
+    "price": "Price",
+    "book": "Request now",
+    "backToList": "Back to all offers"
+  },
+  "notFound": {
+    "title": "Offer not found",
+    "text": "This offer is no longer available."
+  }
+}

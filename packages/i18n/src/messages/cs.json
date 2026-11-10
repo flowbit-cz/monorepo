@@ -1,0 +1,41 @@
+{
+  "common": {
+    "actions": {
+      "search": "Hledat",
+      "reset": "Zrušit filtry",
+      "showMore": "Zobrazit další",
+      "back": "Zpět",
+      "retry": "Zkusit znovu",
+      "close": "Zavřít"
+    },
+    "pagination": {
+      "label": "Stránkování",
+      "previous": "Předchozí stránka",
+      "next": "Další stránka",
+      "page": "Strana {page}"
+    },
+    "price": {
+      "from": "od {price}",
+      "perPerson": "za osobu"
+    },
+    "duration": {
+      "nights": "{nights, plural, one {# noc} few {# noci} other {# nocí}}"
+    },
+    "board": {
+      "RO": "Bez stravy",
+      "BB": "Snídaně",
+      "HB": "Polopenze",
+      "FB": "Plná penze",
+      "AI": "All inclusive"
+    },
+    "loading": "Načítání…",
+    "stars": "{count, plural, one {# hvězdička} few {# hvězdičky} other {# hvězdiček}}"
+  },
+  "errors": {
+    "required": "Povinné pole",
+    "invalidDate": "Neplatné datum",
+    "dateOrder": "Datum návratu musí být po datu odjezdu",
+    "generic": "Něco se pokazilo.",
+    "notFound": "Stránka nenalezena"
+  }
+}

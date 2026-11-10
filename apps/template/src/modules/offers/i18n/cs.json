@@ -1,0 +1,44 @@
+{
+  "list": {
+    "title": "Zájezdy",
+    "metaTitle": "Levné zájezdy",
+    "metaDescription": "Najděte svůj zájezd: hotely, lety a transfery za nejlepší cenu.",
+    "results": "{count, plural, =0 {Žádné nabídky} one {# nabídka} few {# nabídky} other {# nabídek}}",
+    "empty": "Pro vaše hledání jsme bohužel nenašli žádné nabídky.",
+    "emptyHint": "Změňte filtry, nebo je zrušte."
+  },
+  "filter": {
+    "label": "Filtrovat nabídky",
+    "destination": "Destinace",
+    "anyDestination": "Všechny destinace",
+    "dateFrom": "Odjezd od",
+    "dateTo": "Návrat do",
+    "adults": "Dospělí",
+    "board": "Strava",
+    "anyBoard": "Libovolná",
+    "sort": "Řazení",
+    "sortOptions": {
+      "recommended": "Doporučené",
+      "priceAsc": "Od nejlevnějšího",
+      "priceDesc": "Od nejdražšího"
+    },
+    "loadingDestinations": "Načítání destinací…"
+  },
+  "favorite": {
+    "add": "Uložit {title}",
+    "remove": "Odebrat {title} z uložených"
+  },
+  "detail": {
+    "highlights": "Hlavní přednosti",
+    "gallery": "Fotografie",
+    "travelPeriod": "Termín",
+    "board": "Strava",
+    "price": "Cena",
+    "book": "Nezávazně poptat",
+    "backToList": "Zpět na všechny nabídky"
+  },
+  "notFound": {
+    "title": "Nabídka nenalezena",
+    "text": "Tato nabídka už bohužel není dostupná."
+  }
+}

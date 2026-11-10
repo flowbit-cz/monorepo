@@ -1,0 +1,4 @@
+{
+  "extends": "@dertour/tsconfig/node.json",
+  "include": ["src", "*.config.mts"]
+}

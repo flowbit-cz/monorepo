@@ -1,0 +1,74 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+  - "tooling/*"
+
+# One version of every shared dependency across the whole monorepo.
+# Packages reference these as "catalog:" instead of a version range.
+catalog:
+  # framework
+  next: 16.4.6
+  react: 19.3.1
+  react-dom: 19.3.1
+  "@types/react": 19.3.0
+  "@types/react-dom": 19.3.0
+  "@types/node": 26.6.6
+  typescript: 5.9.3
+  # data & state
+  "@tanstack/react-query": 5.107.1
+  zod: 4.6.7
+  zustand: 5.1.0
+  react-hook-form: 7.91.0
+  "@hookform/resolvers": 5.9.2
+  date-fns: 4.4.0
+  next-intl: 4.14.9
+  # api generation & mocking
+  orval: 8.47.0
+  msw: 2.15.0
+  "@faker-js/faker": 10.6.0
+  # styling
+  tailwindcss: 4.3.5
+  "@tailwindcss/postcss": 4.3.5
+  "@tailwindcss/vite": 4.3.5
+  clsx: 2.1.1
+  tailwind-merge: 3.7.0
+  class-variance-authority: 0.7.1
+  # testing
+  vitest: 4.1.12
+  "@vitest/coverage-v8": 4.1.12
+  "@vitejs/plugin-react": 5.2.0
+  jsdom: 26.1.0
+  "@testing-library/react": 16.3.3
+  "@testing-library/user-event": 14.6.9
+  "@testing-library/jest-dom": 6.10.0
+  "@testing-library/dom": 10.4.2
+  "@playwright/test": 1.65.0
+  "@axe-core/playwright": 4.14.0
+  axe-core: 4.14.0
+  "@stryker-mutator/core": 10.1.1
+  "@stryker-mutator/vitest-runner": 10.1.1
+  # storybook
+  storybook: 10.6.6
+  "@storybook/react-vite": 10.6.6
+  "@storybook/addon-a11y": 10.6.6
+  vite: 7.3.8
+  # lint & format
+  eslint: 9.39.5
+  "@eslint/js": 9.39.5
+  typescript-eslint: 8.72.2
+  eslint-config-next: 16.4.6
+  eslint-plugin-react-hooks: 7.1.1
+  globals: 17.14.0
+  prettier: 3.9.10
+  prettier-plugin-tailwindcss: 0.8.1
+  # integrations
+  "@datadog/browser-rum": 7.17.0
+  "@contentstack/delivery-sdk": 5.6.2
+  "@next/third-parties": 16.4.6
+
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - unrs-resolver
+  - "@tailwindcss/oxide"
+  - msw

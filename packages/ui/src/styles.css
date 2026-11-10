@@ -1,0 +1,21 @@
+/*
+ * Base styles of the design system. Apps import it after Tailwind and the tokens:
+ *   @import "tailwindcss";
+ *   @import "@dertour/tokens/theme.css";
+ *   @import "@dertour/ui/styles.css";
+ */
+@source "./";
+
+@layer base {
+    html {
+        font-family: var(--font-sans);
+        color: var(--color-text);
+        background: var(--color-surface);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-focus);
+        outline-offset: 2px;
+    }
+}

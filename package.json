@@ -1,0 +1,41 @@
+{
+  "name": "dertour-fe",
+  "private": true,
+  "packageManager": "pnpm@10.18.0",
+  "engines": {
+    "node": ">=26"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "generate": "turbo run generate",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage",
+    "test:e2e": "turbo run test:e2e",
+    "test:mutation": "turbo run test:mutation",
+    "storybook": "pnpm --filter @dertour/ui storybook",
+    "verify": "turbo run lint typecheck test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "ai:install": "node tooling/ai/install.mjs",
+    "create-app": "node tooling/ai/skills/dertour-fe-create-app/scripts/create-app.mjs"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "20.5.3",
+    "@commitlint/config-conventional": "20.5.3",
+    "@dertour/prettier-config": "workspace:*",
+    "eslint": "catalog:",
+    "husky": "9.1.7",
+    "lint-staged": "16.4.0",
+    "prettier": "catalog:",
+    "prettier-plugin-tailwindcss": "catalog:",
+    "turbo": "2.11.10",
+    "typescript": "catalog:"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs,json,css,md,yml,yaml}": "prettier --write"
+  }
+}

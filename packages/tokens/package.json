@@ -1,0 +1,38 @@
+{
+  "name": "@dertour/tokens",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Design tokens: one JSON source \u2192 Tailwind v4 @theme CSS + typed TS object (web, React Native)",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./tokens.json": "./src/tokens.json",
+    "./theme.css": "./src/generated/theme.css"
+  },
+  "scripts": {
+    "generate": "node scripts/build-css.mjs",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@dertour/eslint-config": "workspace:*",
+    "@dertour/tsconfig": "workspace:*",
+    "@dertour/vitest-config": "workspace:*",
+    "@vitest/coverage-v8": "catalog:",
+    "eslint": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs}": [
+      "eslint --fix --no-warn-ignored",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": "prettier --write"
+  }
+}

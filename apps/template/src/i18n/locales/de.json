@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "titleTemplate": "%s | DERTOUR",
+    "defaultTitle": "DERTOUR – Pauschalreisen & Urlaub",
+    "description": "Pauschalreisen, Hotels und Rundreisen mit DERTOUR buchen."
+  },
+  "layout": {
+    "skipToContent": "Zum Inhalt springen",
+    "homeLink": "DERTOUR Startseite",
+    "mainNavigation": "Hauptnavigation",
+    "nav": {
+      "home": "Start",
+      "offers": "Angebote"
+    },
+    "language": "Sprache",
+    "footer": {
+      "privacy": "Datenschutz",
+      "imprint": "Impressum",
+      "copyright": "© {year} DERTOUR"
+    }
+  },
+  "status": {
+    "notFoundTitle": "Seite nicht gefunden",
+    "notFoundText": "Die Seite existiert nicht oder wurde verschoben.",
+    "errorTitle": "Etwas ist schiefgelaufen",
+    "errorText": "Bitte versuchen Sie es in einem Moment erneut.",
+    "backHome": "Zur Startseite"
+  }
+}
